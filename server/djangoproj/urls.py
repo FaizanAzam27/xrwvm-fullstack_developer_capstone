@@ -35,12 +35,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('djangoapp/', include('djangoapp.urls')),
     path('', TemplateView.as_view(template_name="Home.html")),
-
-    re_path(
-        r'^manifest.json$',
-        serve,
-        {'document_root': os.path.join(
-            settings.BASE_DIR, 'frontend/build'),
-            'path': 'manifest.json'}
-    ),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
